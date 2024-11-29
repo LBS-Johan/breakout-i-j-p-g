@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ballsmm : MonoBehaviour
 {
+    public string myRigidbody;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +18,6 @@ public class ballsmm : MonoBehaviour
     {
 
         float speed = 4;
-        myRigidbody.velocity = myRigidbody.velocity.normalized * speed;
-
+        
     }
 }
