@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 public class ballsmm : MonoBehaviour
 {
-    public string myRigidbody;
-    
+    public Rigidbody2D myRigidbody;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        float speed = 4;
+       
+
+        myRigidbody = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -18,6 +21,7 @@ public class ballsmm : MonoBehaviour
     {
 
         float speed = 4;
+        myRigidbody.velocity = myRigidbody.velocity.normalized * speed;
         
     }
 }
