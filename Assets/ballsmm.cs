@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class ballsmm : MonoBehaviour
 {
@@ -22,7 +23,10 @@ public class ballsmm : MonoBehaviour
         myRigidbody.velocity = myRigidbody.velocity.normalized * speed;
 
 
-        
+        if (transform.position.y < -50)
+        {
+            transform.position = new Vector2(0, 0);
+        }
 
     }
 }
