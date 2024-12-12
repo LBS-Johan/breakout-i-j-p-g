@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 
 public class ballsmm : MonoBehaviour
 {
-    public Rigidbody2D myRigidbody;
+    Rigidbody2D myRigidbody;
+    public float speed = 40f;
 
     void Start()
-    {
-        float speed = 4;
-       
-
+    {       
         myRigidbody = GetComponent<Rigidbody2D>();
+
+        myRigidbody.velocity = new Vector2(0, -speed);
 
     }
 
@@ -20,7 +19,6 @@ public class ballsmm : MonoBehaviour
     void Update()
     {
 
-        float speed = 4;
         myRigidbody.velocity = myRigidbody.velocity.normalized * speed;
         
     }
