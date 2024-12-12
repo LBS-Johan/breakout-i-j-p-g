@@ -1,0 +1,44 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Movement : MonoBehaviour
+{
+    public float speed = 0.5f;
+    Rigidbody2D myRigidbody;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        myRigidbody = GetComponent<Rigidbody2D>();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        myRigidbody.velocity = new Vector2(0, 0);
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            myRigidbody.velocity = new Vector3(1, 0) * speed;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            myRigidbody.velocity = new Vector3(-1, 0) * speed;
+        }
+
+        
+
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        float x = Random.Range(-5, 5);
+        Rigidbody2D rbBall = collision.gameObject.GetComponent<Rigidbody2D>();
+        rbBall.velocity = new Vector2(x, 5);
+    }
+}
