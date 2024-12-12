@@ -5,6 +5,18 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class ballsmm : MonoBehaviour
 {
+    public int damage = 1;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Health health = collision.gameObject.GetComponent<Health>();
+
+        if (health != null)
+        {
+            health.TakeDamage(damage); //apply damage if object has health
+        }
+    }
+
     Rigidbody2D myRigidbody;
     public float speed = 40f;
 
