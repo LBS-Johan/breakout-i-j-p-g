@@ -30,6 +30,15 @@ public class Movement : MonoBehaviour
             myRigidbody.velocity = new Vector3(-1, 0) * speed;
         }
 
+        
 
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        float x = Random.Range(-5, 5);
+        Rigidbody2D rbBall = collision.gameObject.GetComponent<Rigidbody2D>();
+        rbBall.velocity = new Vector2(x, 5);
     }
 }

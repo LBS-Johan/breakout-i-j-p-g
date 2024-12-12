@@ -20,6 +20,9 @@ public class ballsmm : MonoBehaviour
     {
 
         myRigidbody.velocity = myRigidbody.velocity.normalized * speed;
+
+
         
+
     }
 }
